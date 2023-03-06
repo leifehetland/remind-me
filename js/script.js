@@ -1,15 +1,32 @@
 const reminderTitle = document.querySelector(".note-title");
 const reminderBody = document.querySelector(".note-textarea");
 const saveBtn = document.querySelector(".save-note");
-const newBtn = document.querySelector(".new-btn");
+const newBtn = document.querySelector(".new-note");
+const notification = document.querySelector(".notify-user");
+
 let remindersArray = [];
 const ulEl = document.getElementById("list-group");
 
 const saveReminder = () => {
+    notification.classList.add("hidden");
+    
     remindersArray = JSON.parse(localStorage.getItem("reminders"))
+
+    if (!remindersArray) {
+        remindersArray = [];
+    }
+
     
     const titleValue = reminderTitle.value;
     const bodyValue = reminderBody.value;
+
+    if (titleValue === "" && bodyValue === "") {
+        notification.classList.remove("hidden");
+        notification.style.color = "red";
+        notification.textContent = "Must enter reminder title and text to submit."
+
+        return;
+    }
 
     const newReminder = {
         title: titleValue,
@@ -57,6 +74,13 @@ const displayReminders = () => {
 
 }
 
+const clearReminder = () => {
+    reminderTitle.value = "";
+    reminderBody.value = "";
+}
+
 displayReminders();
 
 saveBtn.addEventListener("click", saveReminder)
+
+newBtn.addEventListener("click", clearReminder)

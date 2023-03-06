@@ -28,7 +28,6 @@ nav {
 
 .note-textarea {
   resize: none;
-  height: calc(100% - 63px);
   padding-top: 15px;
 }
 
@@ -40,6 +39,10 @@ nav {
 .note-title:read-only,
 .note-textarea:read-only {
   color: #757575;
+}
+
+.hidden {
+  display: none;
 }
 
 .list-container .card {
@@ -94,8 +97,8 @@ ul {
     margin: 0 auto;
 }
 
-input, textarea {
-    padding-left: 1rem;
+input, textarea, .notify-user {
+  padding-left: 1rem;
 }
 
 .custom-navbar-header {
@@ -107,10 +110,6 @@ input, textarea {
     .card {
         height: 400px;
         
-    }
-
-    input, textarea {
-        padding-left: 1rem;
     }
 
     .list-container {
