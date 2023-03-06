@@ -5,53 +5,56 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+	<!-- Bootstrap CDN -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<!-- Font Awesome CDN for icons-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+	<!-- Google Fonts CDNs for custom fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap"
+		rel="stylesheet">
+
 	<link rel="stylesheet" href="./css/style.css">
 
 	<title>Remind Me</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark">
-      <a class="navbar-brand d-block horizontal-center custom-navbar-header" href="/">Remind Me</a>
-      <div class="icons">
-        <i class="fas fa-save text-light save-note"></i>
-        <i class="fas fa-plus text-light new-note"></i>
-        <i class="fa fa-trash text-light clear-storage" aria-hidden="true"></i>
-      </div>
-    </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="
-        col-sm-12 col-md-6 note-card">
-          <input
-            class="note-title"
-            placeholder="Reminder"
-            maxlength="28"
-            type="text"
-          />
-          <textarea class="note-textarea" placeholder="What do you need to remember?"></textarea>
-          <p class="hidden notify-user"></p>
-        </div>
-        <div class="col-sm-12 col-md-6 list-container" id="list-container">
-          <div class="card">
-            <ul class="list-group" id="list-group"></ul>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="./js/script.js"></script>
-  </body>
+	<!-- Nav Bar with save, new note, and clear icons -->
+	<nav class="navbar navbar-dark">
+		<a class="navbar-brand d-block horizontal-center custom-navbar-header" href="/">Remind Me</a>
+		<div class="icons">
+			<i class="fas fa-save text-light save-note"></i>
+			<i class="fas fa-plus text-light new-note"></i>
+			<i class="fa fa-trash text-light clear-storage" aria-hidden="true"></i>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Column for user input -->
+			<div class="col-sm-12 col-md-6 note-card">
+				<input class="note-title" placeholder="Reminder" maxlength="28" type="text" />
+				<textarea class="note-textarea" placeholder="What do you need to remember?"></textarea>
+				<p class="hidden notify-user"></p>
+			</div>
+			<!-- Column for unordered list of reminder list items pulled from localStorage -->
+			<div class="col-sm-12 col-md-6 list-container" id="list-container">
+				<div class="card">
+					<ul class="list-group" id="list-group"></ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- Bootstrap JS (just in case was needed) -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+	</script>
+	<!-- JavaScript Link -->
+	<script src="./js/script.js"></script>
+</body>
 
 </html>
