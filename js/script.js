@@ -2,6 +2,7 @@ const reminderTitle = document.querySelector(".note-title");
 const reminderBody = document.querySelector(".note-textarea");
 const saveBtn = document.querySelector(".save-note");
 const newBtn = document.querySelector(".new-note");
+const clearStorageBtn = document.querySelector(".clear-storage");
 const notification = document.querySelector(".notify-user");
 
 let remindersArray = [];
@@ -81,8 +82,13 @@ const clearReminder = () => {
     reminderBody.value = "";
 }
 
+const clearStorage = () => {
+    localStorage.clear();
+    displayReminders();
+}
+
 displayReminders();
 
-saveBtn.addEventListener("click", saveReminder)
-
-newBtn.addEventListener("click", clearReminder)
+saveBtn.addEventListener("click", saveReminder);
+newBtn.addEventListener("click", clearReminder);
+clearStorageBtn.addEventListener("click", clearStorage);
