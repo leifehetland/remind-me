@@ -9,7 +9,7 @@ const ulEl = document.getElementById("list-group");
 
 const saveReminder = () => {
     notification.classList.add("hidden");
-    
+
     remindersArray = JSON.parse(localStorage.getItem("reminders"))
 
     if (!remindersArray) {
@@ -34,8 +34,6 @@ const saveReminder = () => {
     }
 
     remindersArray.push(newReminder);
-
-    console.log(remindersArray);
     const stringArray = JSON.stringify(remindersArray)
     localStorage.setItem("reminders", stringArray);
 
@@ -50,13 +48,10 @@ const saveReminder = () => {
 const displayReminders = () => { 
     ulEl.textContent = "";
     const currentReminders = JSON.parse(localStorage.getItem("reminders"));
-    console.log(currentReminders);
 
     if (currentReminders) {
 
-        console.log(currentReminders);
         currentReminders.forEach(reminder => {
-            console.log(reminder);
 
             const liEl = document.createElement("li");
             const h3El = document.createElement("h3");
@@ -70,6 +65,13 @@ const displayReminders = () => {
 
             ulEl.append(liEl)
         });
+    } else {
+        const h3El = document.createElement("h3");
+        h3El.textContent = "Add some reminders to see them here.";
+        h3El.style.paddingLeft = "1rem";
+        h3El.style.paddingTop = "1rem";
+        h3El.style.paddingBottom = "1rem";
+        ulEl.append(h3El);
     }
 
 }
